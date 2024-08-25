@@ -1,6 +1,7 @@
 package com.example.rest_api.controller;
 
 import com.example.rest_api.model.BookRequest;
+import com.example.rest_api.model.UserRequest;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,8 @@ public class PostApiController {
 
     }
 
-    /* 리턴값을 Json으로 리턴해주고 싶으면
+/*
+     리턴값을 Json으로 리턴해주고 싶으면
     @PostMapping("/post")
     public BookRequest post(
             @RequestBody BookRequest bookRequest
@@ -33,9 +35,9 @@ public class PostApiController {
         "number": "100",
         "category": "Java"
     }
-     */
 
-    /* 리턴값을 객체로 주고 싶을때
+
+     리턴값을 객체로 주고 싶을때
     @PostMapping("/post")
     public String post(
             @RequestBody BookRequest bookRequest
@@ -47,4 +49,10 @@ public class PostApiController {
     BookRequest(name=Spring Boot, number=100, category=Java)
 
      */
+    @PostMapping("/user")
+    public void post(
+            @RequestBody UserRequest userRequest
+    ){
+        System.out.println(userRequest);
+    }
 }
